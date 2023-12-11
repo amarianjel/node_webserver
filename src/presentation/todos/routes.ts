@@ -1,14 +1,13 @@
 import { Router } from "express";
-import { TodoController } from "./todos/controller";
-import { TodoRoutes } from "./todos/routes";
+import { TodoController } from "./controller";
 
-export class AppRoutes{
+export class TodoRoutes{
     static get routes(): Router{
 
         const router = Router();
         const todoController = new TodoController();
 
-        router.use('/api/todos', TodoRoutes.routes );
+        router.get('/', todoController.getTodos);
 
         return router;
     }
