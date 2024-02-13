@@ -18,7 +18,6 @@ export class TodosController {
         .execute()
         .then( todos => res.json( todos ) )
         .catch( error => res.status( 400 ).json( { error } ) );
-
     };
 
     public getTodoById = ( req: Request, res: Response ) => {
@@ -28,7 +27,6 @@ export class TodosController {
         .execute( id )
         .then( todo => res.json( todo ) )
         .catch( error => res.status( 400 ).json( { error } ) );
-
     };
 
     public createTodo = ( req: Request, res: Response ) => {
@@ -39,8 +37,6 @@ export class TodosController {
         .execute( createTodoDto! )
         .then( todo => res.json( todo ) )
         .catch( error => res.status( 400 ).json( { error } ) );
-
-
     };
 
     public updateTodo = ( req: Request, res: Response ) => {
@@ -52,7 +48,6 @@ export class TodosController {
         .execute( updateTodoDto! )
         .then( todo => res.json( todo ) )
         .catch( error => res.status( 400 ).json( { error } ) );
-
     };
 
 
@@ -63,9 +58,5 @@ export class TodosController {
         .execute( id )
         .then( todo => res.json( todo ) )
         .catch( error => res.status( 400 ).json( { error } ) );
-
     };
-
-
-
 } 
